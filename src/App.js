@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Import Routes instead of Switch
 import './App.css';
+import Home from './Components/Home';
+import About from './Components/Aboutus';
+
+import Contact from './Components/Contact';
+import CarouselSlides from './Components/CarouselSlides.js';
+import Footer from './Components/Footer';
+import TestimonialDT from './Components/TestimonialDT.js';
+import Navbar from './Components/Navbar'; // Import Navbar component
+import ServicesDT from './Components/ServicesDT.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar /> {/* Render Navbar component */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/testimonial" element={<TestimonialDT />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* Add other routes as needed */}
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

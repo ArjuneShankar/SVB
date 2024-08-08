@@ -1,44 +1,50 @@
 import React from 'react';
+import a1 from '../Assets/a1.png'
 
 const ServicesDT = () => {
     const services = [
         {
             title: "DRIVING LESSONS",
             description: "Improve your driving skills and knowledge in a supportive environment with our tailored driving lessons suited to your goals, skill level, and timetable.",
-            color: "#F18F73",
-            icon: "bi bi-book"
+            color: "#727272",
+            image: a1
         },
         {
             title: "DRIVING ASSESSMENT & MOCK TEST",
             description: "Have one of our qualified instructors evaluate your maneuvers, knowledge of road rules and driver behavior appropriate to NZ standards.",
             color: "#727272",
-            icon: "bi bi-check2-square"
+            image: a1
         },
         {
             title: "TEST CAR FOR HIRE",
             description: "Hire one of our dual-control practice cars that comes with a Supervisor for your practical driving test.",
-            color: "#F18F73",
-            icon: "bi bi-car-front"
+            color: "#727272",
+            image: a1
         },
         {
-            title: "DRIVING SIMULATOR",
-            description: "Ease gently into your practical driving lessons with our driving simulator in the safety of a room.",
+            title: "Beginner Driver Education (BDE) Courses.",
+            description: "Ministry approved BDE course provider.",
             color: "#727272",
-            icon: "bi bi-display"
+            image: a1
         }
     ];  
 
     return (
-        <div className="container py-5">
-            <h2 className="text-center mb-5">Our Services</h2>
+        <div className='service-box'>
+        <div className="container">
+            <h2 className="text-center mb-5 " style={{color: 'white'}} >Our Services</h2>
             <div className="row">
                 {services.map((service, index) => (
                     <div key={index} className="col-md-6 col-lg-3 mb-4">
-                    <div className="card text-white h-100" style={{ backgroundColor: service.color }}>
-                            <div className="card-body d-flex flex-column align-items-center text-center">
-                                <i className={`bi ${service.icon} mb-3`} style={{ fontSize: '2rem' }}></i>
-                                <h5 className="card-title">{service.title}</h5>
-                                <p className="card-text">{service.description}</p>
+                        <div className="text-white" style={{ backgroundColor: service.color }}>
+                            <div className="align-items-center">
+                                {service.image ? (
+                                    <img src={service.image} alt={service.title} className="mb-3" style={{ width: '100%', height: 'auto' }} />
+                                ) : (
+                                    <i className={`bi ${service.icon} mb-3`} style={{ fontSize: '2rem' }}></i>
+                                )}
+                                <h5>{service.title}</h5>
+                                <p>{service.description}</p>
                                 <a href="#" className="btn btn-light mt-auto">Read More</a>
                             </div>  
                         </div>
@@ -46,7 +52,9 @@ const ServicesDT = () => {
                 ))}
             </div>
         </div>
+        </div>
     );
 };
+
 
 export default ServicesDT;

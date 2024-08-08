@@ -20,23 +20,17 @@ const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
     const menuOptions = [
         { text: "Home", icon: <HomeIcon />, path: "/" },
-        { text: "About", icon: <InfoIcon />, path: "/about" },
+        { text: "Courses", icon: <InfoIcon />, path: "/Courses" },
         { text: "Testimonial", icon: <CommentRoundedIcon />, path: "/testimonial" },
         { text: "Contact", icon: <PhoneRoundedIcon />, path: "/contact" },
-        { text: "Cart", icon: <ShoppingCartRoundedIcon />, path: "/cart" }
+       
     ];
 
     return (
-        <div>
-            <div className='top-bar'>
-                <div className='nav2'> 
-                    <span>Email: your-email@example.com</span>
-                <span>Phone: (123) 456-7890</span>
-                </div>
+        
            
-            </div>
         <nav>
-            {/* Your logo container */}
+           
             <div className="nav-logo-container">
                 <img src={svbpng} alt="" style={{ width: '100px' }} />
             </div>
@@ -73,7 +67,7 @@ const Navbar = () => {
                 </Box>
             </Drawer>
         </nav>
-        </div>
+        
     );
 };
 

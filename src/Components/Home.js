@@ -4,13 +4,19 @@ import BannerImage from "../Assets/home-banner-image.png";
 import CarouselSlides from "./CarouselSlides";
 import ServicesDT from "./ServicesDT";
 import { FiArrowRight } from "react-icons/fi";
-
+import Testimonial from "./Testimonial";
+import Testman from "./Testman"
+import Services from "./Services";
+import Aboutus from "./Aboutus";
 const Home = () => {
   return (
   
     <div>
       <CarouselSlides />
-      <ServicesDT />
+      {/* <ServicesDT /> */}
+      <Services />
+      <Testimonial />
+    
     </div>
   );
 };
